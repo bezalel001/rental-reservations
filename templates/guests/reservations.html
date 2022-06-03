@@ -1,0 +1,37 @@
+{% extends '_base.html' %}
+
+{% load reservation_extras %}
+
+{% block title %}Reservations Table{% endblock title %}
+
+{% block content %}
+  <div class="reservations">
+    <h1 class="reservations-table">Reservations Table</h1>
+    <table>
+      <tr>
+        <th>Rental Name</th>
+        <th>Reservation ID</th>
+        <th >Checkin</th>
+        <th >Checkout</th>
+        <th >Previous Reservation ID</th>
+      </tr>
+      {% for reservation in reservations %}
+        <tr>
+          <td>{{reservation.rental.name}}</td>
+          <td>{{reservation.id}}</td>
+          <td >{{reservation.checkin}}</td>
+          <td>{{reservation.checkout}}</td>
+
+          {% with previous_reservation=reservations|previous_item:forloop.counter0 %}
+            {% if previous_reservation.rental.name == reservation.rental.name %}          
+              <td > {{previous_reservation.id}}</td>
+            {% else %}
+              <td >-----------------------</td>
+            {% endif %}        
+          {% endwith %}          
+        </tr>
+      {% endfor %}    
+    </table>
+  </div>
+{% endblock content %}
+
