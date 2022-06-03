@@ -1,0 +1,18 @@
+{% extends '_base.html' %}
+
+{% block title %}{{ rental.name }}{% endblock title %}
+
+{% block content %}
+  <div class="rental-detail">
+    <h2>{{ rental.name }}</h2>
+    
+    <div>
+      <h3>Reservations</h3>
+      <ul>
+      {% for reservation in rental.reservations.all %}
+      <li>Checkin: ({{ reservation.checkin }}) - Checkout: ({{ reservation.checkout }})</li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endblock content %}

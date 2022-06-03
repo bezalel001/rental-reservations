@@ -1,0 +1,12 @@
+{% extends '_base.html' %}
+
+{% block title %}Rentals{% endblock title %}
+
+{% block content %}
+
+{% for rental in rental_list %}
+  <div>
+    <h2><a href="{% url 'rental_detail'  rental.pk %}">{{ rental.name }}</a></h2>
+  </div>
+{% endfor %}
+{% endblock content %}
