@@ -13,28 +13,16 @@ class TimeStampedModel(models.Model):
 
 class Rental(TimeStampedModel):
   id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-  name = models.CharField(_('name'), max_length=200, unique=True)
-  
+  name = models.CharField(_('name'), max_length=200, unique=True)  
 
   class Meta:
     ordering = ['name']
 
   def __str__(self):
     return '{} --- {}'.format(self.name, self.id)
-
   
   def get_absolute_url(self):
     return reverse('rental_detail', args=[str(self.id)])
-  # @property
-  # def hasPrevious(self, index):
-  #   self.q = Reservation.objects.filter(rental=self).order_by('created')
-  #   return len(q) > 1 and (index - 1) >0
-
-  # @property
-  # def previous(self, index):
-  #   # q = Reservation.objects.filter(rental=self).order_by('created')
-  #   return self.hasPrevious(index) and q[index-1]
-
 
 
 class Reservation(TimeStampedModel):
@@ -51,10 +39,7 @@ class Reservation(TimeStampedModel):
   def __str__(self):
     return 'Res-{}'.format(self.id)
   
-  @property
-  def previous(self):
-    q = Reservation.objects.all(rental=self.rental)
-    return q.get_previous_in_order()
+
 
     
 
