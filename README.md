@@ -3,5 +3,10 @@ A table of Reservations
 
 
 ## To run this Django App:
+- clone this project
 - install docker
-- then run:  `docker-compose up -d --build`
+- run:  `docker-compose up -d --build`
+- Home page:  `localhost:8000`
+- Admin page:  `localhost:8000/admin`
+- login: guest001
+- pw: misha001
