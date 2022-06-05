@@ -32,28 +32,6 @@ class ReservationListView(ListView):
     queryset = Reservation.objects.all().order_by('rental__name', 'created')
     return queryset
 
-    # data = {}
-    # size = len(queryset)
-
-    # for i in range(1, size):
-      
-    #   if queryset[i].rental.id == queryset[i-1].rental.id:
-    #      data[queryset[i].rental] = 
-
-
-
-
-
-
-  # def get_context_data(self, **kwargs):
-  #   context = super(ReservationListView, self).get_context_data(**kwargs)
-  #   size = len(self.queryset)
-  #   previous ={}
-  #   for i in range(1, size):
-  #     if self.queryset[i].rental.id == self.queryset[i-1].rental.id:
-  #       previous[self.queryset[i].rental.name] = self.queryset[i-1].id
-  #   context['previous_reservations'] = previous
-  #   return context
 
 
 

@@ -2,7 +2,7 @@ from datetime import datetime
 from django.test import SimpleTestCase, Client, TestCase
 from django.urls import reverse, resolve
 
-from .views import HomePageView
+from .views import HomePageView, RentalListView, ReservationListView
 from .models import Rental, Reservation
 
 class HomepageTests(SimpleTestCase):
@@ -32,6 +32,11 @@ class RentalTests(TestCase):
   def setUp(self):
     self.rental = Rental.objects.create(name='rental-1')
     self.reservation = Reservation.objects.create(rental=self.rental, checkin=datetime(year=2016, month=5, day=23), checkout=datetime(year=2016, month=5, day=6))
+
+
+  def test_rental_url_resolves_rentallistview(self):
+    view = resolve('/rentals/')
+    self.assertEqual(view.func.__name__, RentalListView.as_view().__name__)
 
   
   def test_rental_listing(self):
@@ -100,6 +105,10 @@ class ReservationTests(TestCase):
     self.assertContains(self.response, 'May 6, 2018')
     self.assertContains(self.response, 'June 6, 2020')
     self.assertContains(self.response, 'April 17, 2021')
+
+  def test_reservations_table_url_resolves_reservationslistview(self):
+    view = resolve('/reservations/')
+    self.assertEqual(view.func.__name__, ReservationListView.as_view().__name__)
     
    
 
