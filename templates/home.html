@@ -1,12 +1,12 @@
 {% extends '_base.html' %}
-
+{% load i18n %}
 {% block title %}Home{% endblock title %}
 
 {% block content %}
-<h1 class="table">Welcome To Rentals and Reservations</h1>
+<h1 class="table">{% blocktrans %}Welcome To Rentals and Reservations{% endblocktrans %}</h1>
 <div class="views">
-  <a class="rental-list" href="{% url 'rental_list' %}">View Rentals</a>
+  <a class="rental-list" href="{% url 'rental_list' %}">{% blocktrans %}View Rentals{% endblocktrans %}</a>
   
-  <a class="reservation-table" href="{% url 'reservations_table' %}">View Reservations Table</a>
+  <a class="reservation-table" href="{% url 'reservations_table' %}">{% blocktrans %}View Reservations Table{% endblocktrans %}</a>
 </div>
 {% endblock content %}

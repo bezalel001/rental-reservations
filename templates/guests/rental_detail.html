@@ -1,4 +1,5 @@
 {% extends '_base.html' %}
+{% load i18n %}
 
 {% block title %}{{ rental.name }}{% endblock title %}
 
@@ -7,7 +8,7 @@
     <h2>{{ rental.name }}</h2>
     
     <div>
-      <h3>Reservations</h3>
+      <h3>{% blocktrans %}Reservations{% endblocktrans %}</h3>
       <ul>
       {% for reservation in rental.reservations.all %}
       <li>Checkin: ({{ reservation.checkin }}) - Checkout: ({{ reservation.checkout }})</li>

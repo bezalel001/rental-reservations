@@ -1,19 +1,20 @@
 {% extends '_base.html' %}
+{% load i18n %}
 
 {% load reservation_extras %}
 
-{% block title %}Reservations Table{% endblock title %}
+{% block title %}{% trans "Reservations Table" %}{% endblock title %}
 
 {% block content %}
   <div class="reservations">
-    <h1 class="reservations-table">Reservations Table</h1>
+    <h1 class="reservations-table">{% trans "Reservations Table" %}</h1>
     <table>
       <tr>
-        <th>Rental Name</th>
-        <th>Reservation ID</th>
-        <th>Checkin</th>
-        <th>Checkout</th>
-        <th>Previous Reservation ID</th>
+        <th>{% trans "Rental Name" %}</th>
+        <th>{% trans "Reservation ID" %}</th>
+        <th>{% trans "Checkin" %}</th>
+        <th>{% trans "Checkout" %}</th>
+        <th>{% trans "Previous Reservation ID" %}</th>
       </tr>
       {% for reservation in reservations %}
         <tr>
