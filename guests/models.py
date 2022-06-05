@@ -17,6 +17,7 @@ class Rental(TimeStampedModel):
 
   class Meta:
     ordering = ['name']
+    indexes = [models.Index(fields=['id'], name='rental_index'),]
 
   def __str__(self):
     return '{} --- {}'.format(self.name, self.id)
@@ -38,6 +39,10 @@ class Reservation(TimeStampedModel):
 
   def __str__(self):
     return 'Res-{}'.format(self.id)
+
+  class Meta:
+    indexes = [models.Index(fields=['id'], name='reservation_index'),]
+
   
 
 
