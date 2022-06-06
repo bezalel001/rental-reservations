@@ -28,7 +28,7 @@ A table of Reservations
 
 ### Note:
 
-- I implemented some simple backend performance techniques for demonstration purposes only
+- I implemented some simple backend performance techniques and security settings as a way of demonstrating how I would approach real-world apps
 - I also created a Custom user app for demonstration purposes only
 
 
