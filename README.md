@@ -18,7 +18,7 @@ A table of Reservations
 - Create a `.env` file in the root directory and copy the content of `.env.example` into it.
 - Run  `docker-compose up -d --build` to launch the app
 - Home page:  `localhost:8000`
-- Admin page:  `localhost:8000/admin`
+- Admin page:  `localhost:8000/secret-dashboard`
   - username: `guest001`
   - pw: `misha001`
 
