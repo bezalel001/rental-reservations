@@ -31,4 +31,6 @@ A table of Reservations
 - I implemented some simple backend performance techniques and security settings as a way of demonstrating how I would approach real-world apps
 - I also created a Custom user app for demonstration purposes only
 
-
+### Suggestions
+- Add more unit tests to ensure test coverage
+- Ensure that reservations can only be time/date in the future

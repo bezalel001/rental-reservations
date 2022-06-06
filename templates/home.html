@@ -5,8 +5,8 @@
 {% block content %}
 <h1 class="table">{% blocktrans %}Welcome To Rentals and Reservations{% endblocktrans %}</h1>
 <div class="views">
-  <a class="rental-list" href="{% url 'rental_list' %}">{% blocktrans %}View Rentals{% endblocktrans %}</a>
-  
+  <a class="rental-list" href="{% url 'rental_list' %}">{% blocktrans %}View Rentals{% endblocktrans %}</a>  
   <a class="reservation-table" href="{% url 'reservations_table' %}">{% blocktrans %}View Reservations Table{% endblocktrans %}</a>
+  <a class="nav-link" href="{% url 'admin:index' %}">{% blocktrans %}Admin site{% endblocktrans %}</a>
 </div>
 {% endblock content %}
