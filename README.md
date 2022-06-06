@@ -1,6 +1,8 @@
 # Rental reservations
 A table of Reservations
 
+[video presentation](https://www.loom.com/share/bc0e89bd45c040f3ba6a69b42d9f2025)
+
 
 ## Tools:
 
@@ -10,6 +12,7 @@ A table of Reservations
 - Containers: [Docker](https://www.docker.com/)
 - Backend Performance: Caching, Indexing
 - Database: [PostgreQL](https://www.postgresql.org/) 
+- Video: [Loom](https://www.loom.com/looms)
 - Others: [django-debug-toolbar](https://django-debug-toolbar.readthedocs.io/en/latest/index.html)
 
 ## How to run the code
